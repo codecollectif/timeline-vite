@@ -1,21 +1,38 @@
 import "./App.css";
 import Card from "./components/Card";
+import { useState } from "react";
+
+let autoIncrement = 1;
 
 interface CardData {
   id: number;
 }
 
 function App() {
-  const cardsData = [] as CardData[];
+  const [cardsData, setCardsData] = useState([] as CardData[]);
+  //const [displayCard, setDisplayCard] = useState("cardsData.id.1");
 
   return (
     <>
       <Card />
-      <button type="button"> Show me </button>
-
       {cardsData.map((cardData) => (
         <Card key={cardData.id} />
       ))}
+      <button
+        type="button"
+        /*onClick={() => setCardsData(cardsData)}*/
+        onClick={() => setCardsData([...cardsData, { id: autoIncrement++ }])}
+        /*onClick={() => {
+          const newCardsData = [];
+
+          newCardsData.push(...cardsData);
+          newCardsData.push({ id: autoIncrement++ });
+
+          setCardsData(newCardsData);
+        }}*/
+      >
+        Show me
+      </button>
     </>
   );
 }
