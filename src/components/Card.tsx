@@ -8,6 +8,7 @@ function Card() {
         expedita omnis soluta repudiandae. Maxime incidunt odio, reprehenderit
         recusandae repudiandae autem!
       </p>
+      <figcaption>Lorem</figcaption>
     </figure>
   );
 }
